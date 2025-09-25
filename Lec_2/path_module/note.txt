@@ -1,0 +1,7 @@
+
+bydefault node js is common module and in this module we use require
+and in esmodule we use import and for esmodule we will use follwing steps
+
+use in terminal:-    npm init -y
+package.json will create
+the we will write   "type" : "module" in package.json file
