@@ -1,0 +1,124 @@
+React is a library of js.
+Libraries are flexible while frameworks are rigid.
+NextJS is framework of React.
+Why React? --> DOM me ye dikkat thi ki agar hmko kuch line hatani ho jaise to do list me
+                 4 list bani hui hai or hamko 4th one delete maarni hai to DOM code ko recreate karta hai.
+                 React has a concept of Virtua DOM, jisme wo code ko compare karta hai jo dame rhta hai usko 
+                 unchaged hi rhne deta hai or jo alag hote hai usko update krr deta hai.
+
+<.> Advantages of React.
+     1. It has a concept of vIRTUAL DOM.
+     2. Component Based Architecture.  (Components are pieces of code)
+        There are following types of Components.
+            a. Functional Based Components. (used for static change like variable change array change)
+            b. Class Based Components. (used for dynamic change like).
+     3. No Reloading. (Client side Rendering (CSR) hoti hai)
+     4. JSX extension is used
+     5. faster because of no reloadning.
+
+
+<.> Disadvantages of React.
+    1. Poor Search engine Optimization. (because it is CSR).
+    2. Unidirectional flow of Data. (Parent se Child pe data bhej sakte hai but Child se Parent pe nahi)
+
+
+
+There are two ways for using React.
+    1. by importing library.
+    2. by CDN  -> (content delevery network)
+
+React is Creator but React Native(for mobile application) and React DOM (for web application) are displayer.
+
+
+babel is a compiler used to convert jsx into js so that browser can understand the code.
+
+we use bundlers(vite and parcel) for using react so that we can escape from CDNs
+
+ npm create vite@latest  --> install
+
+ main.jsx is main file.
+
+ index.html  <---- main.jsx <---- App.jsx
+
+w
+ Exports are of two types:
+    1. Named ----> named wale ko import karte time destructure karna padta hai means {} ka use hoga 
+    2. Default --> 1
+
+We can use Component in two ways:-
+    1. <App /> is self closing
+    2. <App></App>  
+
+ham  componenet ko samll letter se start (i.e. app) isliye use nhi krte kyuki jab main.jsx me use krte hai to 
+hame pata nahi chal payega ki ham component use kr rhe hai ya tag.
+
+Component ko capital letter se start karna jaruri nahi hai or na hi export karna hai or na hi file name hai
+but import karte samay capital letter se start katna jaruri hai.
+
+Component ke Function me return statement ke upar kuch bhi use kr sakte hai.
+Aur return statement ke neeche means return statement ke andar we can only use -> map, filter, ternary
+
+true false null undefined these are falsy values -> we can't use directly
+but we can use by using JSON.stringify(x) where x can be any value among above except undefined.
+
+We can only return only one parent like(<div> </div>)
+ not like -> <div> </div>
+            <button> </button>
+
+
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+string ko chhod kr sb ko {} ke andar denge 
+like:-  <Person name="Ayush Chaudhary" age={21} favColor="blue" />
+
+we use props in Person function for catching the values or arguments from app file
+props are properties
+props are immmutable
+states are mutable
+states are used to rerender the Componenets;
+
+variable ke change krne se Component rerender nhi hota hai
+Hooks ki wajah se bhi Component rerender hota hai.
+Hooks are inbuilt functions given by React.
+
+
+state ko impoert karna padta hai or ye named export hota hai isliye hm  {} me import krenge
+import { useState } from "react";
+useState() returns an array with two argument one is variable name and another is function to change variable
+states ko directly change nhi kr skte
+it is a asynchronous function or ye synchronous ke baad chalta hai
+
+"BATCHING" it is a condition jaha pe ui 1 baar rerender hota hai or baki cheeje asynchronously chalti hai.
+
+if we use call back funtion then it will learn the previous values  
+
+
+
+
+--------------------------------------------------------------------------------------------
+
+UseEffect() :- we use it whenever there is sideeffect( like: SetTimeout, SetInterval)
+it accepts 2 arguments 1:- call back fun 2:- dependency array
+useEffect( () => {}, [] );
+useEffect return statement ke baad chalta hai
+dependency array ke andar hm states likhte h jiske change hone pe useEffect dobara chalta hai
+useEffect ke callback function ko async nahi banayenge... callback function ke andar ek async function bana sakte hai
+
+
+
+--------------------------------------------------------------------
+ 
+Lifecycle of Componenets:
+    1. ComponentDidMount()
+    2. ComponentDidUpdate()
+    3. ComponentWillUnmount()
+
+agr hmko do render ke beech me kuch destroy kaarna hai to hm
+cleanup function use krenge.
+
+
